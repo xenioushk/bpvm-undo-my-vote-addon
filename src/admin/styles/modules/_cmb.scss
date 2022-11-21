@@ -1,0 +1,32 @@
+.pvm_feedbacks {
+  clear: both;
+  list-style: none;
+  margin: 12px 0 0 0;
+  li {
+    background: #fafafa;
+    line-height: 2em;
+    padding: 4px;
+    transition: all 0.3s ease-in-out;
+    &::nth-child(2n + 1) {
+      background: #ccc;
+    }
+    a.pvm_remove_feedback {
+      background: #eb644a;
+      border-radius: 2px;
+      color: white;
+      font-size: 12px;
+      font-weight: bold;
+      height: 16px;
+      line-height: 16px;
+      text-align: center;
+      text-decoration: none;
+      width: 16px;
+      display: inline-block;
+      text-align: center;
+    }
+  }
+
+  .no-counter {
+    list-style: circle;
+  }
+}
