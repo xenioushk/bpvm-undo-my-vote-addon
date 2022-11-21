@@ -1,28 +1,13 @@
 ;(function ($) {
   "use strict"
 
-  function umv_setCookie(key, value, expiry) {
-    var expires = new Date()
-    expires.setTime(expires.getTime() + expiry * 24 * 60 * 60 * 1000)
-    document.cookie = key + "=" + value + ";expires=" + expires.toUTCString()
-  }
-
-  function umv_getCookie(key) {
-    var keyValue = document.cookie.match("(^|;) ?" + key + "=([^;]*)(;|$)")
-    return keyValue ? keyValue[2] : null
-  }
-
-  function umv_eraseCookie(key) {
-    umv_setCookie(key, null, "1")
-  }
-
   $(function () {
     // Read the cookie
-    var $bpvm_umv_count = umv_getCookie("bpvm_umv")
+    // var $bpvm_umv_count = umv_getCookie("bpvm_umv")
 
-    if ($bpvm_umv_count == null) {
-      umv_setCookie("bpvm_umv", "1", "1")
-    }
+    // if ($bpvm_umv_count == null) {
+    //   umv_setCookie("bpvm_umv", "1", "1")
+    // }
 
     // Start Undo Vote Code
 
@@ -98,32 +83,32 @@
       return false
     })
 
-    function bpvm_remove_data(post_type, post_id, bpvm_data_stack) {
-      var tfa_status,
-        tfa_vis = "",
-        tfa_vie = ""
+    // function bpvm_remove_data(post_type, post_id, bpvm_data_stack) {
+    //   var tfa_status,
+    //     tfa_vis = "",
+    //     tfa_vie = ""
 
-      if ($(".pvm_dynamic_sort_wrapper").length > 0) {
-        var $pvm_dynamic_sort_wrapper = $(".pvm_dynamic_sort_wrapper"),
-          tfa_status = 1,
-          tfa_vis = $pvm_dynamic_sort_wrapper.data("start"),
-          tfa_vie = $pvm_dynamic_sort_wrapper.data("end")
-      }
+    //   if ($(".pvm_dynamic_sort_wrapper").length > 0) {
+    //     var $pvm_dynamic_sort_wrapper = $(".pvm_dynamic_sort_wrapper"),
+    //       tfa_status = 1,
+    //       tfa_vis = $pvm_dynamic_sort_wrapper.data("start"),
+    //       tfa_vie = $pvm_dynamic_sort_wrapper.data("end")
+    //   }
 
-      return $.ajax({
-        type: "POST",
-        url: ajaxurl + "?action=bpvm_delete_vote_data",
-        data: {
-          post_type: post_type,
-          post_id: post_id,
-          bpvm_data_stack: bpvm_data_stack,
-          bpvm_undo_vote: 1,
-          tfa: tfa_status,
-          tfa_vis: tfa_vis,
-          tfa_vie: tfa_vie,
-        },
-        dataType: "JSON",
-      })
-    }
+    //   return $.ajax({
+    //     type: "POST",
+    //     url: ajaxurl + "?action=bpvm_delete_vote_data",
+    //     data: {
+    //       post_type: post_type,
+    //       post_id: post_id,
+    //       bpvm_data_stack: bpvm_data_stack,
+    //       bpvm_undo_vote: 1,
+    //       tfa: tfa_status,
+    //       tfa_vis: tfa_vis,
+    //       tfa_vie: tfa_vie,
+    //     },
+    //     dataType: "JSON",
+    //   })
+    // }
   })
 })(jQuery)

@@ -4,7 +4,7 @@
  * @package BpvmPlugin
  */
 
-namespace Inc\Base;
+namespace BpvmUmv\Inc\Base;
 
 class Helpers
 {

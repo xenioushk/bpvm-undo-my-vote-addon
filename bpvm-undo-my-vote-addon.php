@@ -39,12 +39,12 @@ function bpvmUmvDeactivePlugin()
 }
 register_activation_hook(__FILE__, 'bpvmUmvDeactivePlugin');
 
-if (class_exists('Inc\\Init')) {
-    Inc\Init::registerServices();
+if (class_exists('BpvmUmv\\Inc\\Init')) {
+    BpvmUmv\Inc\Init::registerServices();
 }
 
 
-return 1;
+// return 1;
 
 /* ----------------------------------------------------------------------------*
  * Public-Facing Functionality

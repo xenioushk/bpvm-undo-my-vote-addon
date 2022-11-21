@@ -5,7 +5,7 @@
  * @package BpvmUmvPlugin
  */
 
-namespace Inc\Base;
+namespace BpvmUmv\Inc\Base;
 
 class Activate
 {

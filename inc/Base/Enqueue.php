@@ -4,7 +4,7 @@
  * @package BpvmPlugin
  */
 
-namespace Inc\Base;
+namespace BpvmUmv\Inc\Base;
 
 class Enqueue extends BaseController
 {
@@ -86,8 +86,11 @@ class Enqueue extends BaseController
 
     // Localize scripts.
     // It hooks with the first script.
-    wp_localize_script($this->plugin_slug . '-frontend-script', $this->plugin_slug . 'AdditionalData', array(
-      $this->plugin_slug . '_app_root' => get_site_url()
+
+    $slugAdditionalData = str_replace('-', '_', $this->plugin_slug);
+
+    wp_localize_script($this->plugin_slug . '-frontend-script', $slugAdditionalData . '_AdditionalData', array(
+      $slugAdditionalData . '_app_root' => get_site_url()
     ));
   }
 
