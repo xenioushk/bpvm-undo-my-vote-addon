@@ -4,7 +4,7 @@
  * @package BpvmUmvPlugin
  */
 
-namespace Inc\Base;
+namespace BpvmUmv\Inc\Base;
 
 class Deactivate
 {

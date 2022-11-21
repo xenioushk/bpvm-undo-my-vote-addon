@@ -4,7 +4,7 @@
  * @package CaseStudyPlugin
  */
 
-namespace Inc\Base;
+namespace BpvmUmv\Inc\Base;
 
 
 class BaseController extends Helpers
@@ -13,10 +13,13 @@ class BaseController extends Helpers
 
   public $api_version;
   public $plugin_version;
+  public $plugin_name;
   public $plugin_slug;
   public $plugin_path; // plugin relative url. (use for template or files.)
   public $plugin_url; // plugin absolute url (use for style)
   public $plugin; // plugin base file path.
+
+  public $plugin_dependency = [];
 
   public $default_scripts_dependency;
 
@@ -24,45 +27,21 @@ class BaseController extends Helpers
   {
 
     $this->api_version = "bpvm/v1";
+    $this->plugin_name = 'Undo My Vote Addon For BWL Pro Voting Manager';
     $this->plugin_version = '1.0.1';
     $this->plugin_slug = "bpvm-umv";
+
+    $this->plugin_dependency = [
+      [
+        'title' => 'BWL Pro Voting Manager',
+        'minimum_ver' => '1.2.6',
+        'current_ver' => get_option('bwl_pvm_plugin_version')
+      ]
+    ];
+
     $this->plugin_path = plugin_dir_path(dirname(__FILE__, 2));
     $this->plugin_url = plugin_dir_url(dirname(__FILE__, 2));
     $this->plugin = plugin_basename(dirname(__FILE__, 3)) . '/bpvm-undo-my-vote-addonphp';
     $this->default_scripts_dependency = "jquery";
-  }
-
-
-  public function get_img($attachment_id, $img_size = "")
-  {
-
-    $img_width = (isset($img_size) && $img_size != "") ? $img_size : 'full';
-
-    $img_string = wp_get_attachment_image($attachment_id, $img_width);
-
-    return $img_string;
-  }
-
-  function img_dimension($attachment_id, $img_size = "")
-  {
-
-    $img_string = '';
-
-    // thumbnail, medium, large, full
-
-    $img_width = (isset($img_size) && $img_size != "") ? $img_size : 'full';
-
-    $image_info = wp_get_attachment_image_src($attachment_id, $img_width);
-
-    $image_srcset = wp_get_attachment_image_srcset($attachment_id);
-
-    if (isset($image_info) && !empty($image_info)) {
-
-      $img_string .= 'src="' . $image_info[0] . '"';
-      $img_string .= ' width="' . $image_info[1] . '" height="' . $image_info[2] . '" ';
-      $img_string .= ' srcset="' . $image_srcset . '"';
-    }
-
-    return $img_string;
   }
 }

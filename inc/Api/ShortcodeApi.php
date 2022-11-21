@@ -4,14 +4,13 @@
  * @package CaseStudyPlugin
  */
 
-namespace Inc\Api;
+namespace BpvmUmv\Inc\Api;
 
-use \Inc\Base\BaseController;
+use BpvmUmv\Inc\Base\BaseController;
 
 // ShortcodeApi interface class.
 
 class ShortcodeApi extends BaseController
-
 {
 
   public $shortcodes = [];
@@ -27,11 +26,8 @@ class ShortcodeApi extends BaseController
     if (!empty($this->shortcodes)) {
 
       foreach ($this->shortcodes as $shorcode) {
-        add_shortcode($shorcode['tag'], $shorcode['callback']);
+        \add_shortcode($shorcode['tag'], $shorcode['callback']);
       }
-
-
-      // add_shortcode('rest_api_init', [$this, 'addCustomRestApi']);
     }
   }
 }

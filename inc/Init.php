@@ -4,7 +4,7 @@
  * @package BpvmPlugin
  */
 
-namespace Inc;
+namespace BpvmUmv\Inc;
 
 class Init
 {
@@ -20,7 +20,7 @@ class Init
       // Pages\CustomColumns::class,
       // Pages\CustomTheme::class
       // Pages\CaseStudyCpt::class,
-      // Shortcodes\CaseStudy::class,
+      Shortcodes\Shortcodes::class,
     ];
   }
 
