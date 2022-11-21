@@ -11,7 +11,6 @@ class Enqueue extends BaseController
 
   public function register()
   {
-
     //for front end.
     add_action('wp_enqueue_scripts', [$this, 'enqueueScripts']);
 
