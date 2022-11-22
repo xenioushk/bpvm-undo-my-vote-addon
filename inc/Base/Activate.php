@@ -2,7 +2,7 @@
 
 
 /**
- * @package BpvmUmvPlugin
+ * @package BpvmUmv
  */
 
 namespace BpvmUmv\Inc\Base;

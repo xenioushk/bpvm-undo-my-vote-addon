@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @package BpvmPlugin
+ * @package BpvmUmv
  */
 
 namespace BpvmUmv\Inc\Base;
@@ -16,24 +16,6 @@ class Enqueue extends BaseController
 
     // for admin.
     add_action('admin_enqueue_scripts', [$this, 'adminEnqueueScripts']);
-
-    // ajax loading. will shift it from here later.
-    // add_action('wp_ajax_nopriv_load_more_posts', [$this, 'load_more_posts']);
-    // add_action('wp_ajax_load_more_posts', [$this, 'load_more_posts']);
-  }
-
-  public function load_more_posts()
-  {
-    ob_start();
-
-    $current_page = $_REQUEST['current_page'] ?? 1;
-    $tax = $_REQUEST['tax'] ?? "";
-    $cat = $_REQUEST['cat'] ?? "";
-    //
-    echo do_shortcode("[casestudy ajax='1' current_page='$current_page' ajax_tax='$tax' ajax_cat='$cat']");
-    wp_send_json_success(ob_get_clean());
-
-    die();
   }
 
   private function getAppStyles()

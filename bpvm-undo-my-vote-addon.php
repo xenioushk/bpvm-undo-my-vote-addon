@@ -7,7 +7,7 @@
 /**
  * Plugin Name:    Undo My Vote Addon
  * Plugin URI:        https://bluewindlab.net
- * Description:      This Addon allows your users to undo their submitted vote. This addon automatically added a custom undo button to the voting box, so user can easily undo their vote. Also, admin users can limit the number of undo for the users vote. 
+ * Description:      This Addon allows your users to undo their submitted votes. This Addon automatically added a custom undo button to the voting box, so user can easily undo their vote. Also, admin users can limit the number of undo for the user's vote. 
  * Author: Md Mahbub Alam Khan
  * Version: 1.0.0
  * Author URI: https://bluewindlab.net
@@ -39,6 +39,8 @@ function bpvmUmvDeactivePlugin()
 }
 register_activation_hook(__FILE__, 'bpvmUmvDeactivePlugin');
 
+
+// Started plugin from here.
 
 if (class_exists('BpvmUmv\\Inc\\Init')) {
     add_action('plugins_loaded', 'BpvmUmv\Inc\Init::registerServices');

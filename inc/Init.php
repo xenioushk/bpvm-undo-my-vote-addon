@@ -13,15 +13,9 @@ class Init
 
   public static function getServices()
   {
-
     return [
-      // Pages\PmApi::class,
       Base\Enqueue::class,
       Base\Language::class,
-      // Base\QuerySupport::class,
-      // Pages\CustomColumns::class,
-      // Pages\CustomTheme::class
-      // Pages\CaseStudyCpt::class,
       Shortcodes\Shortcodes::class,
     ];
   }
@@ -48,10 +42,12 @@ class Init
   public static function registerServices()
   {
 
+    // Checkpoint for all required dependencies.
     if (PluginInfo::getRequiredPluginInstallationStatus() == 0)
       add_action('admin_notices', [self::class, 'displayPluginRequirementsNotice']);
     return false;
 
+    // Started registering all the plugin functionalites.
     foreach (self::getServices() as $service) {
 
       $service = self::instantiate($service);
@@ -64,7 +60,6 @@ class Init
 
   private static function instantiate($class)
   {
-
     return new $class();
   }
 }

@@ -2,7 +2,7 @@
 
 
 /**
- * @package CaseStudyPlugin
+ * @package BpvmUmv
  */
 
 namespace BpvmUmv\Inc\Shortcodes;

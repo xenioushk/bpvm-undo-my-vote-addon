@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @package CaseStudyPlugin
+ * @package BpvmUmv
  */
 
 namespace BpvmUmv\Inc\Base;
@@ -11,6 +11,7 @@ class PluginInfo
 
   public static $pluginName =  'Undo My Vote Addon';
   public static $pluginVersion = '1.0.1';
+  public static $pluginSlug = "bpvm-umv";
   public static $parentPlugin = 'BWL Pro Voting Manager';
   public static $parentPluginUrl = 'https://1.envato.market/bpvm-wp';
   public static $parentPluginReqVer = '1.2.6';

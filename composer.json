@@ -5,13 +5,8 @@
   "license": "MIT",
   "autoload": {
     "psr-4": {
-      "BpvmUmv\\Inc\\": "inc/",
-      "PluginTests\\": "tests/"
+      "BpvmUmv\\Inc\\": "inc/"
     }
-  },
-  "require-dev": {
-    "phpunit/phpunit": "^9.5",
-    "yoast/phpunit-polyfills": "*"
   },
   "authors": [
     {
