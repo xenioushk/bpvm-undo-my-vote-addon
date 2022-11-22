@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @package BpvmPlugin
+ * @package BpvmUmv
  */
 
 namespace BpvmUmv\Inc\Base;

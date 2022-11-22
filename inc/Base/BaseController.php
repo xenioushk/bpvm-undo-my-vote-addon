@@ -1,10 +1,12 @@
 <?php
 
 /**
- * @package CaseStudyPlugin
+ * @package BpvmUmv
  */
 
 namespace BpvmUmv\Inc\Base;
+
+use BpvmUmv\Inc\Base\PluginInfo;
 
 
 class BaseController extends Helpers
@@ -26,18 +28,9 @@ class BaseController extends Helpers
   public function __construct()
   {
 
-    $this->api_version = "bpvm/v1";
-    $this->plugin_name = 'Undo My Vote Addon For BWL Pro Voting Manager';
-    $this->plugin_version = '1.0.1';
-    $this->plugin_slug = "bpvm-umv";
-
-    $this->plugin_dependency = [
-      [
-        'title' => 'BWL Pro Voting Manager',
-        'minimum_ver' => '1.2.6',
-        'current_ver' => get_option('bwl_pvm_plugin_version')
-      ]
-    ];
+    $this->plugin_name = PluginInfo::$pluginName;
+    $this->plugin_version = PluginInfo::$pluginVersion;
+    $this->plugin_slug = PluginInfo::$pluginSlug; // Use for translation.
 
     $this->plugin_path = plugin_dir_path(dirname(__FILE__, 2));
     $this->plugin_url = plugin_dir_url(dirname(__FILE__, 2));
