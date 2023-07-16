@@ -1,12 +1,12 @@
 <?php
 
 /**
- * Plugin Name:    Undo My Vote Addon For BWL Pro Voting Manager
- * Plugin URI:        https://bluewindlab.net
+ * Plugin Name:     Undo My Vote Addon For BWL Pro Voting Manager
+ * Plugin URI:        https://bluewindlab.net/portfolio/undo-my-vote-addon-for-bwl-pro-voting-manager/
  * Description:      This Addon allows your users to undo their submitted vote. This addon automatically added a custom undo button to the voting box, so user can easily undo their vote. Also, admin users can limit the number of undo for the users vote. 
- * Author: Md Mahbub Alam Khan
- * Version: 1.0.0
- * Author URI: https://bluewindlab.net
+ * Author:             Mahbub Alam Khan
+ * Version:            1.0.1
+ * Author URI:       https://codecanyon.net/item/undo-my-vote-addon-for-bwl-pro-voting-manager/32986128
  * WP Requires at least: 4.8+
  * Text Domain: bpvm-umv
  */
@@ -15,22 +15,17 @@ if (!defined('WPINC')) {
     die;
 }
 
-/* ----------------------------------------------------------------------------*
- * Public-Facing Functionality
- * ---------------------------------------------------------------------------- */
-
- //Version Define For Parent Plugin And Addon.
-// @Since: 1.0.1
-
 define('BPVMUMV_PARENT_PLUGIN_INSTALLED_VERSION', get_option('bwl_pvm_plugin_version'));
 define('BPVMUMV_ADDON_PARENT_PLUGIN_TITLE', 'BWL Pro Voting Manager');
 define('BPVMUMV_ADDON_TITLE', 'Undo My Vote Addon For BWL Pro Voting Manager');
 define('BPVMUMV_PARENT_PLUGIN_REQUIRED_VERSION', '1.2.6'); // change plugin required version in here.
-define('BPVMUMV_ADDON_CURRENT_VERSION', '1.0.0'); // change plugin current version in here.
+define('BPVMUMV_ADDON_CURRENT_VERSION', '1.0.1'); // change plugin current version in here.
 
-define('BPVMUMV_DIR', plugin_dir_path(__FILE__));
+define('BPVMUMV_PATH', plugin_dir_path(__FILE__));
+define("BPVMUMV_DIR", plugins_url() . '/bpvm-undo-my-vote-addon/');
+define("BPVMUMV_UPDATER_SLUG", plugin_basename(__FILE__)); // change plugin current version in here.
 
-require_once( BPVMUMV_DIR . 'public/class-umv-addon.php' );
+require_once(BPVMUMV_PATH . 'public/class-umv-addon.php');
 
 register_activation_hook(__FILE__, array('BPVM_umv', 'activate'));
 register_deactivation_hook(__FILE__, array('BPVM_umv', 'deactivate'));
@@ -38,8 +33,6 @@ register_deactivation_hook(__FILE__, array('BPVM_umv', 'deactivate'));
 add_action('plugins_loaded', array('BPVM_umv', 'get_instance'));
 
 if (is_admin()) {
-    
-    require_once( plugin_dir_path(__FILE__) . 'admin/class-umv-addon-admin.php' );
+    require_once(plugin_dir_path(__FILE__) . 'admin/class-umv-addon-admin.php');
     add_action('plugins_loaded', array('BPVM_Umv_Admin', 'get_instance'));
-    
 }
