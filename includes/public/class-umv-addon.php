@@ -26,9 +26,9 @@ class BPVM_umv
             $bpvm_umv_status == 1
         ) {
             // Load public-facing style sheet and JavaScript.
-            add_action('init', array($this, 'load_plugin_textdomain'));
-            add_action('wp_enqueue_scripts', array($this, 'bpvm_umv_enqueue_scripts'));
-            add_shortcode('bpvm_umv', array($this, 'cb_bpvm_umv'));
+            add_action('init', [$this, 'load_plugin_textdomain']);
+            add_action('wp_enqueue_scripts', [$this, 'bpvm_umv_enqueue_scripts']);
+            add_shortcode('bpvm_umv', [$this, 'cb_bpvm_umv']);
         }
     }
 
@@ -134,11 +134,6 @@ class BPVM_umv
         // @TODO: Define activation functionality here
     }
 
-    /**
-     * Fired for each blog when the plugin is deactivated.
-     *
-     * @since    1.0.0
-     */
     private static function single_deactivate()
     {
         // @TODO: Define deactivation functionality here
@@ -147,7 +142,7 @@ class BPVM_umv
     public function cb_bpvm_umv($atts)
     {
 
-        $atts = shortcode_atts(array(
+        $atts = shortcode_atts([
             'title' => esc_html__('Undo !', 'bpvm-umv'),
             'post_type' => '',
             'post_id' => 0,
@@ -155,7 +150,7 @@ class BPVM_umv
             'vote_type' => '',
             'vote_date' => '',
             'umv_max_count' => 2
-        ), $atts);
+        ], $atts);
 
         extract($atts);
 

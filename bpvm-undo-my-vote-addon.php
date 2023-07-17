@@ -27,12 +27,12 @@ define("BPVMUMV_UPDATER_SLUG", plugin_basename(__FILE__));
 
 require_once(BPVMUMV_PATH . 'includes/public/class-umv-addon.php');
 
-register_activation_hook(__FILE__, array('BPVM_umv', 'activate'));
-register_deactivation_hook(__FILE__, array('BPVM_umv', 'deactivate'));
+register_activation_hook(__FILE__, ['BPVM_umv', 'activate']);
+register_deactivation_hook(__FILE__, ['BPVM_umv', 'deactivate']);
 
-add_action('plugins_loaded', array('BPVM_umv', 'get_instance'));
+add_action('plugins_loaded', ['BPVM_umv', 'get_instance']);
 
 if (is_admin()) {
     require_once(plugin_dir_path(__FILE__) . 'includes/admin/class-umv-addon-admin.php');
-    add_action('plugins_loaded', array('BPVM_Umv_Admin', 'get_instance'));
+    add_action('plugins_loaded', ['BPVM_Umv_Admin', 'get_instance']);
 }

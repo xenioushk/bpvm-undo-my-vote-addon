@@ -14,7 +14,7 @@ class BPVM_Umv_Admin
             !class_exists('BWL_Pro_Voting_Manager') ||
             BPVMUMV_PARENT_PLUGIN_INSTALLED_VERSION < BPVMUMV_PARENT_PLUGIN_INSTALLED_VERSION
         ) {
-            add_action('admin_notices', array($this, 'umv_version_update_admin_notice'));
+            add_action('admin_notices', [$this, 'umv_version_update_admin_notice']);
             return false;
         }
 
@@ -35,8 +35,6 @@ class BPVM_Umv_Admin
 
         return self::$instance;
     }
-
-    //Version Manager:  Update Checking
 
     public function umv_version_update_admin_notice()
     {
