@@ -10,7 +10,10 @@ class BPVM_Umv_Admin
     private function __construct()
     {
 
-        if (!class_exists('BWL_Pro_Voting_Manager') || BPVMUMV_PARENT_PLUGIN_INSTALLED_VERSION < '1.2.5') {
+        if (
+            !class_exists('BWL_Pro_Voting_Manager') ||
+            BPVMUMV_PARENT_PLUGIN_INSTALLED_VERSION < BPVMUMV_PARENT_PLUGIN_INSTALLED_VERSION
+        ) {
             add_action('admin_notices', array($this, 'umv_version_update_admin_notice'));
             return false;
         }

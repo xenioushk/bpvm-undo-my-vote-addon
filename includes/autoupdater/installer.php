@@ -1,9 +1,9 @@
 <?php
 
-add_action("wp_ajax_uvt_bpvm_installation_counter", "uvtBpvmAddInstallationData");
-add_action("wp_ajax_nopriv_uvt_bpvm_installation_counter", "uvtBpvmAddInstallationData");
+add_action("wp_ajax_umv_bpvm_installation_counter", "umvBpvmAddInstallationData");
+add_action("wp_ajax_nopriv_umv_bpvm_installation_counter", "umvBpvmAddInstallationData");
 
-function uvtBpvmApiUrl()
+function umvBpvmApiUrl()
 {
   $baseUrl = get_home_url();
   if (strpos($baseUrl, "localhost/dev.plugin/bpvm/") != false) {
@@ -15,9 +15,9 @@ function uvtBpvmApiUrl()
   }
 }
 // 
-function uvtBpvmAddInstallationData()
+function umvBpvmAddInstallationData()
 {
-  $apiURL = uvtBpvmApiUrl();
+  $apiURL = umvBpvmApiUrl();
   $site_url = get_site_url();
   $product_id = $_REQUEST['product_id']; // change the id
   $ip = $_SERVER['REMOTE_ADDR'];
@@ -28,7 +28,7 @@ function uvtBpvmAddInstallationData()
 
   if (isset($output_decode['status']) && $output_decode['status'] == 1) {
 
-    update_option('uvt_bpvm_installation', '1'); // change the tag
+    update_option('umv_bpvm_installation', '1'); // change the tag
 
     $data = [
       'status' => $output_decode['status']

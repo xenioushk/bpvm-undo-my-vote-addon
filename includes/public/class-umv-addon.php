@@ -20,7 +20,11 @@ class BPVM_umv
             $bpvm_umv_status = 1;
         }
 
-        if (class_exists('BWL_Pro_Voting_Manager') && BPVMUMV_PARENT_PLUGIN_INSTALLED_VERSION > '1.2.4' && $bpvm_umv_status == 1) {
+        if (
+            class_exists('BWL_Pro_Voting_Manager') &&
+            BPVMUMV_PARENT_PLUGIN_INSTALLED_VERSION >= BPVMUMV_PARENT_PLUGIN_INSTALLED_VERSION &&
+            $bpvm_umv_status == 1
+        ) {
             // Load public-facing style sheet and JavaScript.
             add_action('init', array($this, 'load_plugin_textdomain'));
             add_action('wp_enqueue_scripts', array($this, 'bpvm_umv_enqueue_scripts'));
@@ -169,28 +173,16 @@ class BPVM_umv
         }
     }
 
-    /**
-     * Load the plugin text domain for translation.
-     *
-     * @since    1.0.0
-     */
     public function load_plugin_textdomain()
     {
-
         $domain = $this->plugin_slug;
         $locale = apply_filters('plugin_locale', get_locale(), $domain);
-
         load_textdomain($domain, trailingslashit(WP_LANG_DIR) . $domain . '/' . $domain . '-' . $locale . '.mo');
     }
 
-    /**
-     * Register and enqueues public-facing Scripts & Styles
-     *
-     * @since    1.0.0
-     */
+
     public function bpvm_umv_enqueue_scripts()
     {
-
         wp_enqueue_style($this->plugin_slug . '-frontend', BPVMUMV_DIR . 'assets/styles/frontend.css',  [], self::VERSION);
         wp_enqueue_script($this->plugin_slug . '-frontend', BPVMUMV_DIR . 'assets/scripts/frontend.js',  ['jquery'], self::VERSION, TRUE);
     }
