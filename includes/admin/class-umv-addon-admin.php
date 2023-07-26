@@ -51,7 +51,6 @@ class BPVM_Umv_Admin
             $this->plugin_slug . '-admin',
             'umvBpvmAdminData',
             [
-                'product_id' => 32986128,
                 'installation' => get_option('umv_bpvm_installation')
             ]
         );
