@@ -1,7 +1,6 @@
 <?php
 
 add_action("wp_ajax_umv_bpvm_installation_counter", "umvBpvmAddInstallationData");
-add_action("wp_ajax_nopriv_umv_bpvm_installation_counter", "umvBpvmAddInstallationData");
 
 function umvBpvmApiUrl()
 {
@@ -21,11 +20,10 @@ function umvBpvmAddInstallationData()
   $site_url = get_site_url();
   $product_id = BPVMUMV_CC_ID; // change the id
   $ip = $_SERVER['REMOTE_ADDR'];
-  $requestUrl = $apiURL . "wp-json/bwlapi/v1/installation/count?product_id=$product_id&site=$site_url&referer=$ip";
+  $ver = BPVMUMV_ADDON_CURRENT_VERSION;
+  $requestUrl = $apiURL . "wp-json/bwlapi/v1/installation/count?product_id=$product_id&site=$site_url&referer=$ip&ver=$ver";
 
   $output = wp_remote_get($requestUrl);
-
-  // New Code.
 
   // Default.
   $data = [
@@ -38,9 +36,9 @@ function umvBpvmAddInstallationData()
 
     $output_decode = json_decode($data, true);
 
-    if (isset($output_decode['status']) && $output_decode['status'] == 1) {
+    if (isset($output_decode['status']) && $output_decode['status'] != 0) {
 
-      update_option('umv_bpvm_installation', '1'); // change the tag
+      update_option(BPVMUMV_INSTALLATION_TAG, '1'); // change the tag
 
       $data = [
         'status' => $output_decode['status'],

@@ -51,7 +51,7 @@ class BPVM_Umv_Admin
             $this->plugin_slug . '-admin',
             'umvBpvmAdminData',
             [
-                'installation' => get_option('umv_bpvm_installation')
+                'installation' => get_option(BPVMUMV_INSTALLATION_TAG)
             ]
         );
     }
