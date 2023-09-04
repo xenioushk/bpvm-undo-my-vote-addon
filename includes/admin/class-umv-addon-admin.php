@@ -60,9 +60,9 @@ class BPVM_Umv_Admin
     {
         if (is_admin()) {
 
-            include_once BPVMWPVA_PATH . 'includes/autoupdater/WpAutoUpdater.php';
-            include_once BPVMWPVA_PATH . 'includes/autoupdater/installer.php';
-            include_once BPVMWPVA_PATH . 'includes/autoupdater/updater.php';
+            include_once BPVMUMV_PATH . 'includes/autoupdater/WpAutoUpdater.php';
+            include_once BPVMUMV_PATH . 'includes/autoupdater/installer.php';
+            include_once BPVMUMV_PATH . 'includes/autoupdater/updater.php';
         }
     }
 }
