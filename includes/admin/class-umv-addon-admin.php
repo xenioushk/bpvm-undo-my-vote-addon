@@ -39,9 +39,9 @@ class BPVM_Umv_Admin
     public function umv_version_update_admin_notice()
     {
 
-        echo '<div class="updated"><p>You need to download & install '
-            . '<b><a href="https://1.envato.market/bpvm-wp" target="_blank">' . BPVMUMV_ADDON_PARENT_PLUGIN_TITLE . ' ( Minimum Version ' . BPVMUMV_PARENT_PLUGIN_REQUIRED_VERSION . ' )</a></b> '
-            . 'to use <b>' . BPVMUMV_ADDON_TITLE . '</b>.</p></div>';
+        echo '<div class="notice notice-error"><p><span class="dashicons dashicons-info-outline"></span> ' . esc_html__("You need to download & install", "bpvm-umv")
+            . '<b><a href="https://1.envato.market/bpvm-wp" target="_blank">' . BPVMUMV_ADDON_PARENT_PLUGIN_TITLE . '</a></b> '
+            . esc_html__("to use", "bpvm-umv") . ' <b>' . BPVMUMV_ADDON_TITLE . '</b>.</p></div>';
     }
 
     public function enqueue_scripts()

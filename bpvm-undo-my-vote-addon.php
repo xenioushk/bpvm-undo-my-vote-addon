@@ -3,13 +3,23 @@
 /**
  * Plugin Name:     Undo My Vote Addon For BWL Pro Voting Manager
  * Plugin URI:        https://bluewindlab.net/portfolio/undo-my-vote-addon-for-bwl-pro-voting-manager/
- * Description:      This Addon allows your users to undo their submitted vote. This addon automatically added a custom undo button to the voting box, so user can easily undo their vote. Also, admin users can limit the number of undo for the users vote. 
+ * Description:      This addon enhances user engagement by providing an 'Undo' feature, allowing your users to retract their previously submitted votes. It seamlessly integrates into the voting interface, automatically incorporating a custom 'Undo' button within the voting box. This empowers users with the convenience of reversing their vote decisions effortlessly. Additionally, administrators have the flexibility to set limits on the number of times a user can undo their vote, providing fine-grained control over the voting process to suit their specific requirements.
  * Author:             Mahbub Alam Khan
  * Version:            1.0.4
  * Author URI:       https://codecanyon.net/item/undo-my-vote-addon-for-bwl-pro-voting-manager/32986128
  * WP Requires at least: 6.0+
  * Text Domain: bpvm-umv
+ * Domain Path: /languages/
+ * 
+ * 
+ * @package Undo My Vote Addon For BWL Pro Voting Manager
+ * @author Mahbub Alam Khan
+ * @license GPL-2.0+
+ * @link https://bluewindlab.net
+ * @copyright 2023 BlueWindLab
+ * 
  */
+
 // If this file is called directly, abort.
 if (!defined('WPINC')) {
     die;
