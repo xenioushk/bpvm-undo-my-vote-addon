@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Undo My Vote Addon For BWL Pro Voting Manager\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2021-07-06 14:18+0600\n"
+"POT-Creation-Date: 2023-09-07 01:31+0300\n"
 "PO-Revision-Date: 2018-01-31 21:24+0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: BlueWindLab <hkhan.cse@gmail.com>\n"
@@ -14,13 +14,22 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Poedit 3.3.2\n"
 "X-Poedit-KeywordsList: _;__;_n;_x;_e;esc_attr__;esc_attr_e;esc_html__;"
 "esc_html_e\n"
-"X-Poedit-Basepath: .\n"
-"X-Poedit-SearchPath-0: .\n"
-"X-Poedit-SearchPath-1: ..\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SearchPath-0: lang\n"
+"X-Poedit-SearchPath-1: .\n"
+"X-Poedit-SearchPathExcluded-0: node_modules\n"
 
-#: ../public/class-umv-addon.php:138
+#: includes/admin/class-umv-addon-admin.php:42
+msgid "You need to download & install"
+msgstr ""
+
+#: includes/admin/class-umv-addon-admin.php:44
+msgid "to use"
+msgstr ""
+
+#: includes/public/class-umv-addon.php:146
 msgid "Undo !"
 msgstr ""
