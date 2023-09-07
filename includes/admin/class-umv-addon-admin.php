@@ -58,11 +58,9 @@ class BPVM_Umv_Admin
 
     public function includeFiles()
     {
-        if (is_admin()) {
-
-            include_once BPVMUMV_PATH . 'includes/autoupdater/WpAutoUpdater.php';
-            include_once BPVMUMV_PATH . 'includes/autoupdater/installer.php';
-            include_once BPVMUMV_PATH . 'includes/autoupdater/updater.php';
-        }
+        include_once BPVMUMV_PATH . 'includes/admin/autoupdater/WpAutoUpdater.php';
+        include_once BPVMUMV_PATH . 'includes/admin/autoupdater/installer.php';
+        include_once BPVMUMV_PATH . 'includes/admin/autoupdater/updater.php';
+        include_once BPVMUMV_PATH . 'includes/admin/metainfo/BpvmUmvMetaInfo.php';
     }
 }

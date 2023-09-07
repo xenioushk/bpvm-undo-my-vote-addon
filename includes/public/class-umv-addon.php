@@ -131,12 +131,10 @@ class BPVM_umv
      */
     private static function single_activate()
     {
-        // @TODO: Define activation functionality here
     }
 
     private static function single_deactivate()
     {
-        // @TODO: Define deactivation functionality here
     }
 
     public function cb_bpvm_umv($atts)

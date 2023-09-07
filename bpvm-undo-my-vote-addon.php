@@ -31,6 +31,8 @@ define('BPVMUMV_ADDON_TITLE', 'Undo My Vote Addon For BWL Pro Voting Manager');
 define('BPVMUMV_PARENT_PLUGIN_REQUIRED_VERSION', '1.3.0'); // change plugin required version in here.
 define('BPVMUMV_ADDON_CURRENT_VERSION', '1.0.4'); // change plugin current version in here.
 
+define("BPVMUMV_ADDON_ROOT_FILE", "bpvm-undo-my-vote-addon.php"); // use for the meta info.
+
 define('BPVMUMV_PATH', plugin_dir_path(__FILE__));
 define("BPVMUMV_DIR", plugins_url() . '/bpvm-undo-my-vote-addon/');
 define("BPVMUMV_UPDATER_SLUG", plugin_basename(__FILE__));
