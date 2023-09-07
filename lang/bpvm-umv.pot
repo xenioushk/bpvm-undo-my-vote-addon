@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Undo My Vote Addon For BWL Pro Voting Manager\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2023-09-07 01:31+0300\n"
+"POT-Creation-Date: 2023-09-07 11:29+0300\n"
 "PO-Revision-Date: 2018-01-31 21:24+0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: BlueWindLab <hkhan.cse@gmail.com>\n"
@@ -30,6 +30,22 @@ msgstr ""
 msgid "to use"
 msgstr ""
 
-#: includes/public/class-umv-addon.php:146
+#: includes/admin/metainfo/BpvmUmvMetaInfo.php:23
+msgid "Options Panel"
+msgstr ""
+
+#: includes/admin/metainfo/BpvmUmvMetaInfo.php:27
+msgid "Docs"
+msgstr ""
+
+#: includes/admin/metainfo/BpvmUmvMetaInfo.php:32
+msgid "Support"
+msgstr ""
+
+#: includes/admin/metainfo/BpvmUmvMetaInfo.php:37
+msgid "Tutorials"
+msgstr ""
+
+#: includes/public/class-umv-addon.php:144
 msgid "Undo !"
 msgstr ""
