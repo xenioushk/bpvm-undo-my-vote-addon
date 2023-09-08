@@ -49,7 +49,7 @@ staging:
   script:
     - pwd
     - echo "Updating plugin files.."
-    - lftp -e "set ssl:verify-certificate no; open $FTP_SHOST; user $FTP_SUSERNAME $FTP_SPASSWORD; mirror -X .* -X .*/ --reverse --verbose $BUILD_DIR /wpplugins/$DEPLOY_DIR; bye"
+    #- lftp -e "set ssl:verify-certificate no; open $FTP_SHOST; user $FTP_SUSERNAME $FTP_SPASSWORD; mirror -X .* -X .*/ --reverse --verbose $BUILD_DIR /wpplugins/$DEPLOY_DIR; bye"
 
 production:
   stage: production
