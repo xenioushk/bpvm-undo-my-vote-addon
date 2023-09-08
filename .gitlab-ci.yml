@@ -26,7 +26,7 @@ build:
     - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
     - export NVM_DIR="$HOME/.nvm"
     - source "$NVM_DIR/nvm.sh"
-    - nvm install 16.20.0
+    - nvm install 14.1.0
     - npm -v #NPM Version.
     - node -v #"Node Version."
     - echo "Installing Packages."
@@ -49,7 +49,7 @@ staging:
   script:
     - pwd
     - echo "Updating plugin files.."
-    - lftp -e "set ssl:verify-certificate no; open $FTP_SHOST; user $FTP_SUSERNAME $FTP_SPASSWORD; mirror -X .* -X .*/ --reverse --verbose $BUILD_DIR /wpplugins/$DEPLOY_DIR; bye"
+    #- lftp -e "set ssl:verify-certificate no; open $FTP_SHOST; user $FTP_SUSERNAME $FTP_SPASSWORD; mirror -X .* -X .*/ --reverse --verbose $BUILD_DIR /wpplugins/$DEPLOY_DIR; bye"
 
 production:
   stage: production
