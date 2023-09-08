@@ -29,12 +29,12 @@ class BpvmUmvMetaInfo
           'nt' => 1
         ],
         [
-          'title' =>  '<span class="dashicons dashicons-editor-help"></span>' . esc_html__("Support", "bpvm-umv"),
+          'title' => esc_html__("Support", "bpvm-umv"),
           'url' => "https://codecanyon.net/item/undo-my-vote-addon-for-bwl-pro-voting-manager/32986128/support",
           'nt' => 1
         ],
         [
-          'title' => '<span class="dashicons dashicons-youtube"></span>' . esc_html__("Tutorials", "bpvm-umv"),
+          'title' => esc_html__("Tutorials", "bpvm-umv"),
           'url' => BPVM_YOUTUBE_PLAYLIST,
           'nt' => 1
         ]
