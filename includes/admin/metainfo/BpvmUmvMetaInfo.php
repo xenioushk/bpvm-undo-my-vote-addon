@@ -20,21 +20,21 @@ class BpvmUmvMetaInfo
       $additionalLinks = [
 
         [
-          'title' => __('Options Panel', 'bpvm-umv'),
+          'title' => esc_html__("Options Panel", "bpvm-umv"),
           'url' => get_admin_url() . 'admin.php?page=bwl-pvm_option_panel#bpvm_umv_options',
         ],
         [
-          'title' => __('Docs', 'bpvm-umv'),
+          'title' => esc_html__("Docs", "bpvm-umv"),
           'url' => 'https://xenioushk.github.io/docs-plugins-addon/bpvm-addon/uvm/index.html',
           'nt' => 1
         ],
         [
-          'title' =>  '<span class="dashicons dashicons-editor-help"></span>' . __('Support', 'bpvm-umv'),
+          'title' =>  '<span class="dashicons dashicons-editor-help"></span>' . esc_html__("Support", "bpvm-umv"),
           'url' => "https://codecanyon.net/item/undo-my-vote-addon-for-bwl-pro-voting-manager/32986128/support",
           'nt' => 1
         ],
         [
-          'title' => '<span class="dashicons dashicons-youtube"></span>' . __('Tutorials', 'bpvm-umv'),
+          'title' => '<span class="dashicons dashicons-youtube"></span>' . esc_html__("Tutorials", "bpvm-umv"),
           'url' => BPVM_YOUTUBE_PLAYLIST,
           'nt' => 1
         ]
