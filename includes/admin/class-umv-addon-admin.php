@@ -10,9 +10,8 @@ class BPVM_Umv_Admin
     private function __construct()
     {
 
-        if (
-            !class_exists('BWL_Pro_Voting_Manager') ||
-            BPVMUMV_PARENT_PLUGIN_INSTALLED_VERSION < BPVMUMV_PARENT_PLUGIN_INSTALLED_VERSION
+        if (!class_exists('BPVMWP\\Init') 
+            || BPVMUMV_PARENT_PLUGIN_INSTALLED_VERSION < BPVMUMV_PARENT_PLUGIN_INSTALLED_VERSION
         ) {
             add_action('admin_notices', [$this, 'umv_version_update_admin_notice']);
             return false;
@@ -46,7 +45,7 @@ class BPVM_Umv_Admin
 
     public function enqueue_scripts()
     {
-        wp_register_script($this->plugin_slug . '-admin', BPVMUMV_DIR . 'assets/scripts/admin.js', ['jquery'], BPVMUMV_ADDON_CURRENT_VERSION, TRUE);
+        wp_register_script($this->plugin_slug . '-admin', BPVMUMV_DIR . 'assets/scripts/admin.js', ['jquery'], BPVMUMV_ADDON_CURRENT_VERSION, true);
         wp_localize_script(
             $this->plugin_slug . '-admin',
             'umvBpvmAdminData',

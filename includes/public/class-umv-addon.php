@@ -20,10 +20,9 @@ class BPVM_umv
             $bpvm_umv_status = 1;
         }
 
-        if (
-            class_exists('BWL_Pro_Voting_Manager') &&
-            BPVMUMV_PARENT_PLUGIN_INSTALLED_VERSION >= BPVMUMV_PARENT_PLUGIN_INSTALLED_VERSION &&
-            $bpvm_umv_status == 1
+        if (class_exists('BPVMWP\\Init') 
+            && BPVMUMV_PARENT_PLUGIN_INSTALLED_VERSION >= BPVMUMV_PARENT_PLUGIN_INSTALLED_VERSION 
+            && $bpvm_umv_status == 1
         ) {
             // Load public-facing style sheet and JavaScript.
             add_action('init', [$this, 'load_plugin_textdomain']);
@@ -127,7 +126,7 @@ class BPVM_umv
     /**
      * Fired for each blog when the plugin is activated.
      *
-     * @since    1.0.0
+     * @since 1.0.0
      */
     private static function single_activate()
     {
@@ -140,7 +139,8 @@ class BPVM_umv
     public function cb_bpvm_umv($atts)
     {
 
-        $atts = shortcode_atts([
+        $atts = shortcode_atts(
+            [
             'title' => esc_html__('Undo !', 'bpvm-umv'),
             'post_type' => '',
             'post_id' => 0,
@@ -148,7 +148,8 @@ class BPVM_umv
             'vote_type' => '',
             'vote_date' => '',
             'umv_max_count' => 2
-        ], $atts);
+            ], $atts
+        );
 
         extract($atts);
 
@@ -177,6 +178,6 @@ class BPVM_umv
     public function bpvm_umv_enqueue_scripts()
     {
         wp_enqueue_style($this->plugin_slug . '-frontend', BPVMUMV_DIR . 'assets/styles/frontend.css',  [], self::VERSION);
-        wp_enqueue_script($this->plugin_slug . '-frontend', BPVMUMV_DIR . 'assets/scripts/frontend.js',  ['jquery'], self::VERSION, TRUE);
+        wp_enqueue_script($this->plugin_slug . '-frontend', BPVMUMV_DIR . 'assets/scripts/frontend.js',  ['jquery'], self::VERSION, true);
     }
 }
