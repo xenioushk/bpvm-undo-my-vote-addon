@@ -11,17 +11,23 @@
  * Text Domain: bpvm-umv
  * Domain Path: /lang/
  *
- * @package   Undo My Vote Addon For BWL Pro Voting Manager
+ * @package   UMVADDON
  * @author    Mahbub Alam Khan
  * @license   GPL-2.0+
  * @link      https://codecanyon.net/user/xenioushk
  * @copyright 2025 BlueWindLab
  */
 
-// If this file is called directly, abort.
-if ( ! defined( 'WPINC' ) ) {
-    die;
+namespace UMVADDON;
+
+// security check.
+defined( 'ABSPATH' ) || die( 'Unauthorized access' );
+
+if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
+	require_once __DIR__ . '/vendor/autoload.php';
 }
+
+return;
 
 define( 'BPVMUMV_PARENT_PLUGIN_INSTALLED_VERSION', get_option( 'bwl_pvm_plugin_version' ) );
 define( 'BPVMUMV_ADDON_PARENT_PLUGIN_TITLE', 'BWL Pro Voting Manager' );
