@@ -19,32 +19,32 @@
  */
 
 // If this file is called directly, abort.
-if (!defined('WPINC')) {
+if ( ! defined( 'WPINC' ) ) {
     die;
 }
 
-define('BPVMUMV_PARENT_PLUGIN_INSTALLED_VERSION', get_option('bwl_pvm_plugin_version'));
-define('BPVMUMV_ADDON_PARENT_PLUGIN_TITLE', 'BWL Pro Voting Manager');
-define('BPVMUMV_ADDON_TITLE', 'Undo My Vote Addon For BWL Pro Voting Manager');
-define('BPVMUMV_PARENT_PLUGIN_REQUIRED_VERSION', '1.3.0'); // change plugin required version in here.
-define('BPVMUMV_ADDON_CURRENT_VERSION', '1.0.7'); // change plugin current version in here.
+define( 'BPVMUMV_PARENT_PLUGIN_INSTALLED_VERSION', get_option( 'bwl_pvm_plugin_version' ) );
+define( 'BPVMUMV_ADDON_PARENT_PLUGIN_TITLE', 'BWL Pro Voting Manager' );
+define( 'BPVMUMV_ADDON_TITLE', 'Undo My Vote Addon For BWL Pro Voting Manager' );
+define( 'BPVMUMV_PARENT_PLUGIN_REQUIRED_VERSION', '1.3.0' ); // change plugin required version in here.
+define( 'BPVMUMV_ADDON_CURRENT_VERSION', '1.0.7' ); // change plugin current version in here.
 
-define("BPVMUMV_ADDON_ROOT_FILE", "bpvm-undo-my-vote-addon.php"); // use for the meta info.
+define( 'BPVMUMV_ADDON_ROOT_FILE', 'bpvm-undo-my-vote-addon.php' ); // use for the meta info.
 
-define('BPVMUMV_PATH', plugin_dir_path(__FILE__));
-define("BPVMUMV_DIR", plugins_url() . '/bpvm-undo-my-vote-addon/');
-define("BPVMUMV_UPDATER_SLUG", plugin_basename(__FILE__));
-define("BPVMUMV_CC_ID", "32986128");
-define("BPVMUMV_INSTALLATION_TAG", "umv_bpvm_installation_" . str_replace('.', '_', BPVMUMV_ADDON_CURRENT_VERSION));
+define( 'BPVMUMV_PATH', plugin_dir_path( __FILE__ ) );
+define( 'BPVMUMV_DIR', plugins_url() . '/bpvm-undo-my-vote-addon/' );
+define( 'BPVMUMV_UPDATER_SLUG', plugin_basename( __FILE__ ) );
+define( 'BPVMUMV_CC_ID', '32986128' );
+define( 'BPVMUMV_INSTALLATION_TAG', 'umv_bpvm_installation_' . str_replace( '.', '_', BPVMUMV_ADDON_CURRENT_VERSION ) );
 
 require_once BPVMUMV_PATH . 'includes/public/class-umv-addon.php';
 
-register_activation_hook(__FILE__, ['BPVM_umv', 'activate']);
-register_deactivation_hook(__FILE__, ['BPVM_umv', 'deactivate']);
+register_activation_hook( __FILE__, [ 'BPVM_umv', 'activate' ] );
+register_deactivation_hook( __FILE__, [ 'BPVM_umv', 'deactivate' ] );
 
-add_action('plugins_loaded', ['BPVM_umv', 'get_instance']);
+add_action( 'plugins_loaded', [ 'BPVM_umv', 'get_instance' ] );
 
-if (is_admin()) {
-    include_once plugin_dir_path(__FILE__) . 'includes/admin/class-umv-addon-admin.php';
-    add_action('plugins_loaded', ['BPVM_Umv_Admin', 'get_instance']);
+if ( is_admin() ) {
+    include_once plugin_dir_path( __FILE__ ) . 'includes/admin/class-umv-addon-admin.php';
+    add_action( 'plugins_loaded', [ 'BPVM_Umv_Admin', 'get_instance' ] );
 }
