@@ -52,6 +52,7 @@ class PluginConstants {
 		self::set_paths_constants();
 		self::set_base_constants();
 		self::set_assets_constants();
+		self::set_umva_constants();
 		self::set_updater_constants();
 		self::set_product_info_constants();
 	}
@@ -99,6 +100,15 @@ class PluginConstants {
 		define( 'UMVADDON_PLUGIN_STYLES_ASSETS_DIR', UMVADDON_PLUGIN_URL . 'assets/styles/' );
 		define( 'UMVADDON_PLUGIN_SCRIPTS_ASSETS_DIR', UMVADDON_PLUGIN_URL . 'assets/scripts/' );
 		define( 'UMVADDON_PLUGIN_LIBS_DIR', UMVADDON_PLUGIN_URL . 'libs/' );
+	}
+
+	/**
+	 * Set the Umva constants.
+	 */
+	private static function set_umva_constants() {
+
+		$bpvm_umv_status = self::$plugin_options['bpvm_umv_status'] ?? 1;
+		define( 'UMVADDON_BUTTON_STATUS', $bpvm_umv_status );
 	}
 
 	/**

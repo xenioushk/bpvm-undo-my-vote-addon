@@ -24,13 +24,12 @@ class Init {
 		$services = [];
 
 		$service_classes = [
-			'helpers' => self::get_helper_classes(),
-			'base'    => self::get_base_classes(),
-			'meta'    => self::get_meta_classes(),
+			'helpers'    => self::get_helper_classes(),
+			'base'       => self::get_base_classes(),
+			'meta'       => self::get_meta_classes(),
 			// 'actions' => self::get_action_classes(),
-			// 'filters'    => self::get_filter_classes(),
-			// 'shortcodes' => self::get_shortcodes_classes(),
-			// 'notices' => self::get_notices_classes(),
+			'filters'    => self::get_filter_classes(),
+			'shortcodes' => self::get_shortcodes_classes(),
 		];
 
 		foreach ( $service_classes as $service_class ) {
@@ -98,7 +97,6 @@ class Init {
 	private static function get_helper_classes() {
 		$classes = [
 			Helpers\PluginConstants::class,
-			// Helpers\BkbTplHelpers::class,
 		];
 		return $classes;
 	}
@@ -123,9 +121,7 @@ class Init {
 	 */
 	private static function get_action_classes() {
 
-		$classes = [
-			Controllers\Actions\RecaptchaOverlay::class,
-		];
+		$classes = [];
 		return $classes;
 	}
 
@@ -137,10 +133,7 @@ class Init {
 	private static function get_filter_classes() {
 
 		$classes = [
-			Controllers\Filters\Templates\Pagination::class,
-			Controllers\Filters\Templates\Category::class,
-			Controllers\Filters\Templates\Tag::class,
-			Controllers\Filters\Templates\Single::class,
+			Controllers\Filters\UmvaFilters::class,
 		];
 		return $classes;
 	}
@@ -153,18 +146,6 @@ class Init {
 	private static function get_shortcodes_classes() {
 		$classes = [
 			Controllers\Shortcodes\AddonShortcodes::class,
-		];
-		return $classes;
-	}
-
-	/**
-	 * Get Notices classes.
-	 *
-	 * @return array
-	 */
-	private static function get_notices_classes() {
-		$classes = [
-			Controllers\Notices\PluginNotices::class,
 		];
 		return $classes;
 	}
