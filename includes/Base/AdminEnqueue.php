@@ -21,7 +21,7 @@ class AdminEnqueue {
 	public function __construct() {
 		// Frontend script slug.
 		// This is required to hook the loclization texts.
-		$this->admin_script_slug = 'bpvm-recap-admin';
+		$this->admin_script_slug = 'bpvm-umv-admin';
 	}
 
 	/**
@@ -53,10 +53,10 @@ class AdminEnqueue {
 
 		// Localize scripts.
 		// Frontend.
-		// Access data: bkbTplAdminData.version
+		// Access data: umvBpvmAdminData.version
 		wp_localize_script(
             $this->admin_script_slug,
-            'RecapAddonAdminData',
+            'umvBpvmAdminData',
             [
 				'version'      => UMVADDON_PLUGIN_VERSION,
 				'ajaxurl'      => esc_url( admin_url( 'admin-ajax.php' ) ),

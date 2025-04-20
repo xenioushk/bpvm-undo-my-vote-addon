@@ -2,7 +2,7 @@
   function umv_bpvm_installation_counter() {
     return $.ajax({
       type: "POST",
-      url: ajaxurl,
+      url: umvBpvmAdminData.ajaxurl,
       data: {
         action: "umv_bpvm_installation_counter", // this is the name of our WP AJAX function that we'll set up next
       },
