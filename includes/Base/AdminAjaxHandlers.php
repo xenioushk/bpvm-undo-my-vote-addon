@@ -22,7 +22,7 @@ class AdminAjaxHandlers {
 		// If do so, you need to change in js file too.
 		$ajax_requests = [
 			[
-				'tag'      => 'bpvm_recap_installation_counter',
+				'tag'      => 'umv_bpvm_installation_counter',
 				'callback' => [ $plugin_installation_cb, 'save' ],
 			],
 		];
