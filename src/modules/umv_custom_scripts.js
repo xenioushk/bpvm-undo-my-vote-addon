@@ -27,6 +27,11 @@
     // Start Undo Vote Code
 
     $(document).on("click", ".bpvm_undo_vote", function () {
+      // Confirm before removing the vote
+      if (!confirm("Are you sure you want to undo your vote?")) {
+        return false
+      }
+
       var $this = $(this),
         $bpvm_umv_count = umv_getCookie("bpvm_umv"),
         $umv_max_count = $this.data("umv_max_count")
@@ -47,7 +52,7 @@
         $post_type = $this.data("post_type"),
         $vote_type = $this.data("vote_type"),
         $vote_date = $this.data("vote_date"),
-        bpvm_btn_like = $this.closest("section").find(".btn_like"),
+        bpvm_btn_like = $this.closest(".pvm_btn_container").find(".btn_like"),
         bpvm_unique_id = bpvm_btn_like.attr("bpvm_unique_id"),
         post_id = bpvm_btn_like.attr("post_id")
 
@@ -73,6 +78,7 @@
       bpvm_data_stack.push(bpvm_data_array)
 
       $.when(bpvm_remove_data($post_type, $post_id, bpvm_data_stack)).done(function (response_data) {
+        console.log(response_data)
         var $up_total_likes = response_data.total_likes,
           $up_total_dislikes = response_data.total_dislikes,
           $up_total_votes = parseInt($up_total_likes, 10) + parseInt($up_total_dislikes, 10)
