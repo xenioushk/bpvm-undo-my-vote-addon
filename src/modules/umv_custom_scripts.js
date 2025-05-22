@@ -126,7 +126,7 @@
           tfa: tfa_status,
           tfa_vis: tfa_vis,
           tfa_vie: tfa_vie,
-          nonce: bpvmFrontendData.nonce,
+          nonce: bpvmFrontendData.bpvm_frontend_nonce,
         },
         dataType: "JSON",
       })
