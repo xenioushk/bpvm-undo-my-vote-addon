@@ -1,63 +1,69 @@
-# Copyright (C) 2024 Mahbub Alam Khan
+# Copyright (C) 2025 Mahbub Alam Khan
 # This file is distributed under the same license as the Undo My Vote Addon For BWL Pro Voting Manager plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Undo My Vote Addon For BWL Pro Voting Manager 1.0.6\n"
+"Project-Id-Version: Undo My Vote Addon For BWL Pro Voting Manager 2.0.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/bpvm-undo-my-vote-addon\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-12-08T16:54:21+00:00\n"
+"POT-Creation-Date: 2025-05-22T12:38:16+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.9.0\n"
+"X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: bpvm-umv\n"
 
 #. Plugin Name of the plugin
+#: bpvm-undo-my-vote-addon.php
 msgid "Undo My Vote Addon For BWL Pro Voting Manager"
 msgstr ""
 
 #. Plugin URI of the plugin
+#: bpvm-undo-my-vote-addon.php
 msgid "https://codecanyon.net/item/undo-my-vote-addon-for-bwl-pro-voting-manager/32986128"
 msgstr ""
 
 #. Description of the plugin
-msgid "This addon enhances user engagement by providing an 'Undo' feature, allowing your users to retract their previously submitted votes. It seamlessly integrates into the voting interface, automatically incorporating a custom 'Undo' button within the voting box. This empowers users with the convenience of reversing their vote decisions effortlessly. Additionally, administrators have the flexibility to set limits on the number of times a user can undo their vote, providing fine-grained control over the voting process to suit their specific requirements."
+#: bpvm-undo-my-vote-addon.php
+msgid "Addon enhances user engagement by providing an 'Undo' feature to retract their previously submitted votes."
 msgstr ""
 
 #. Author of the plugin
+#: bpvm-undo-my-vote-addon.php
 msgid "Mahbub Alam Khan"
 msgstr ""
 
 #. Author URI of the plugin
+#: bpvm-undo-my-vote-addon.php
 msgid "https://codecanyon.net/user/xenioushk"
 msgstr ""
 
-#: includes/admin/class-umv-addon-admin.php:42
-msgid "You need to download & install"
+#. translators: %d: Number of votes a user is allowed to undo in a day.
+#: includes/Base/Enqueue.php:86
+msgid "WARNING: You are allowed to UNDO %d votes in a day!"
 msgstr ""
 
-#: includes/admin/class-umv-addon-admin.php:44
-msgid "to use"
+#: includes/Base/Enqueue.php:92
+msgid "Are you sure you want to remove your vote?"
 msgstr ""
 
-#: includes/admin/metainfo/BpvmUmvMetaInfo.php:23
+#: includes/Callbacks/Filters/UmvaButtonFilterCb.php:24
+msgid "Undo!"
+msgstr ""
+
+#: includes/Callbacks/Shortcodes/UndoButtonCb.php:27
+msgid "Undo !"
+msgstr ""
+
+#: includes/Controllers/PluginMeta/MetaInfo.php:34
 msgid "Options Panel"
 msgstr ""
 
-#: includes/admin/metainfo/BpvmUmvMetaInfo.php:27
+#: includes/Controllers/PluginMeta/MetaInfo.php:38
 msgid "Docs"
 msgstr ""
 
-#: includes/admin/metainfo/BpvmUmvMetaInfo.php:32
+#: includes/Controllers/PluginMeta/MetaInfo.php:43
 msgid "Support"
-msgstr ""
-
-#: includes/admin/metainfo/BpvmUmvMetaInfo.php:37
-msgid "Tutorials"
-msgstr ""
-
-#: includes/public/class-umv-addon.php:144
-msgid "Undo !"
 msgstr ""

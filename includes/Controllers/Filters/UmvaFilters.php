@@ -20,13 +20,10 @@ class UmvaFilters {
         // Initialize API.
         $filters_api = new FiltersApi();
 
-        // Initialize callbacks.
-        $umva_button_filter_cb = new UmvaButtonFilterCb();
-
         $filters = [
             [
                 'tag'      => 'umva_button_filter',
-                'callback' => [ $umva_button_filter_cb, 'get_the_layout' ],
+                'callback' => [ ( new UmvaButtonFilterCb() ), 'get_the_layout' ],
             ],
 
         ];

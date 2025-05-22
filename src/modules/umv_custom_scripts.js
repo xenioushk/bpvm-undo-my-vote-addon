@@ -1,6 +1,5 @@
 ;(function ($) {
   "use strict"
-
   function umv_setCookie(key, value, expiry) {
     var expires = new Date()
     expires.setTime(expires.getTime() + expiry * 24 * 60 * 60 * 1000)
@@ -28,7 +27,7 @@
 
     $(document).on("click", ".bpvm_undo_vote", function () {
       // Confirm before removing the vote
-      if (!confirm("Are you sure you want to undo your vote?")) {
+      if (!confirm(bpvmUmvaData.umva_confirmation_msg)) {
         return false
       }
 
@@ -37,7 +36,8 @@
         $umv_max_count = $this.data("umv_max_count")
 
       if ($bpvm_umv_count > $umv_max_count) {
-        alert("WARNING: You are allowed to UNDO " + $umv_max_count + " votes in a day!")
+        alert(bpvmUmvaData.umva_max_allowed_vote_msg)
+        $this.remove()
         return false
       }
 
@@ -78,7 +78,6 @@
       bpvm_data_stack.push(bpvm_data_array)
 
       $.when(bpvm_remove_data($post_type, $post_id, bpvm_data_stack)).done(function (response_data) {
-        console.log(response_data)
         var $up_total_likes = response_data.total_likes,
           $up_total_dislikes = response_data.total_dislikes,
           $up_total_votes = parseInt($up_total_likes, 10) + parseInt($up_total_dislikes, 10)
@@ -118,7 +117,7 @@
 
       return $.ajax({
         type: "POST",
-        url: ajaxurl + "?action=bpvm_delete_vote_data",
+        url: bpvmFrontendData.ajaxurl + "?action=bpvm_delete_vote_data",
         data: {
           post_type: post_type,
           post_id: post_id,
@@ -127,6 +126,7 @@
           tfa: tfa_status,
           tfa_vis: tfa_vis,
           tfa_vie: tfa_vie,
+          nonce: bpvmFrontendData.nonce,
         },
         dataType: "JSON",
       })

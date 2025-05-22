@@ -107,7 +107,7 @@ class PluginConstants {
 	 */
 	private static function set_umva_constants() {
 
-		$bpvm_umv_status = self::$plugin_options['bpvm_umv_status'] ?? 1;
+		$bpvm_umv_status = intval( self::$plugin_options['bpvm_umv_status'] ?? 1 );
 		define( 'UMVADDON_BUTTON_STATUS', $bpvm_umv_status );
 	}
 
@@ -129,7 +129,7 @@ class PluginConstants {
 	 * Set the product info constants.
 	 */
 	private static function set_product_info_constants() {
-		define( 'UMVADDON_PRODUCT_ID', '32986128' ); // Plugin codecanyon/themeforest Id.
+		define( 'UMVADDON_PRODUCT_ID', '32986128' );
 		define( 'UMVADDON_PRODUCT_INSTALLATION_TAG', 'umv_bpvm_installation_' . str_replace( '.', '_', UMVADDON_PLUGIN_VERSION ) );
 	}
 }

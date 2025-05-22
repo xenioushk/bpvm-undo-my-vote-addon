@@ -1,6 +1,8 @@
 <?php
 namespace UMVADDON\Base;
 
+use UMVADDON\Helpers\PluginConstants;
+
 /**
  * Class for registering the plugin scripts and styles.
  *
@@ -73,11 +75,24 @@ class Enqueue {
 		// Localize scripts.
 		// Frontend.
 		// Access data: bpvmUmvaData.version
+
+		$options = PluginConstants::$plugin_options;
+
+		$default_max_count = 2;
+
+		$umv_max_count = intval( $options['bpvm_umv_max_count'] ?? 2 ) > 0
+			? intval( $options['bpvm_umv_max_count'] )
+			: $default_max_count;
+
+		// translators: %d: Number of votes a user is allowed to undo in a day.
+		$umva_max_allowed_vote_msg = sprintf( esc_html__( 'WARNING: You are allowed to UNDO %d votes in a day!', 'bpvm-umv' ), $umv_max_count );
 		wp_localize_script(
             $this->frontend_script_slug,
             'bpvmUmvaData',
             [
-				'version' => UMVADDON_PLUGIN_VERSION,
+				'version'                   => UMVADDON_PLUGIN_VERSION,
+				'umva_confirmation_msg'     => '❓' . esc_html__( 'Are you sure you want to remove your vote?', 'bpvm-umv' ),
+				'umva_max_allowed_vote_msg' => $umva_max_allowed_vote_msg,
 			]
 		);
 	}
