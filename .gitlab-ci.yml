@@ -1,6 +1,6 @@
 variables:
   BUILD_DIR: /home/gitlab-runner/builds/$CI_RUNNER_SHORT_TOKEN/0/plugin-addons/bpvm-undo-my-vote-addon # Adjusted
-  PLUGIN_DIR: bnm/wp-content/plugins/bpvm-undo-my-vote-addon/ # Adjusted
+  PLUGIN_DIR: bpvm/wp-content/plugins/bpvm-undo-my-vote-addon/ # Adjusted
   SDEPLOY_DIR: /home/$SHOST_ID/public_html/bwl_staging/wpplugins/$PLUGIN_DIR # Adjusted
   PDEPLOY_DIR: /home/$PHOST_ID/public_html/public_html/projects/wpplugin/$PLUGIN_DIR # Adjusted
 
