@@ -5,7 +5,7 @@
  * Plugin URI:        https://codecanyon.net/item/undo-my-vote-addon-for-bwl-pro-voting-manager/32986128
  * Description:      Addon enhances user engagement by providing an 'Undo' feature to retract their previously submitted votes.
  * Author:             Mahbub Alam Khan
- * Version:            2.0.1
+ * Version:            2.0.2
  * Author URI:       https://codecanyon.net/user/xenioushk
  * WP Requires at least: 6.0+
  * Text Domain: bpvm-umv
@@ -68,12 +68,6 @@ function init_recap_addon() {
 	// Check if the parent plugin installed.
 	if ( ! class_exists( 'BPVMWP\\Init' ) ) {
 		add_action( 'admin_notices', [ Helpers\DependencyManager::class, 'notice_missing_main_plugin' ] );
-		return;
-	}
-
-	// Check parent plugin activation status.
-	if ( ! ( Helpers\DependencyManager::get_product_activation_status() ) ) {
-		add_action( 'admin_notices', [ Helpers\DependencyManager::class, 'notice_missing_purchase_verification' ] );
 		return;
 	}
 
