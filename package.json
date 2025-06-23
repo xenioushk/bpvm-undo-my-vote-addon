@@ -1,6 +1,6 @@
 {
   "name": "bpvm-undo-my-vote-addon",
-  "version": "2.0.0",
+  "version": "2.0.2",
   "description": "This addon enhances user engagement by providing an Undo feature, allowing your users to retract their previously submitted votes.",
   "main": "index.js",
   "scripts": {
